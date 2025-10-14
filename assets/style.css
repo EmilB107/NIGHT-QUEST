@@ -1427,6 +1427,10 @@ a.done {
     pointer-events: none;
 }
 
+.blur-overlay.active {
+    opacity: 1;
+}
+
 /* footer */
 footer {
     position: absolute;
