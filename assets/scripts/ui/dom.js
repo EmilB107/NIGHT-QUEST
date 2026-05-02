@@ -41,7 +41,7 @@ export function hideAllOverlays() {
   });
   const resultOverlay = document.querySelector('.result-overlay');
   if (resultOverlay?.classList.contains('active')) resultOverlay.classList.remove('active');
-  // Hide blur overlay as well
+  document.querySelector('.about-overlay')?.classList.remove('active');
   els.blurOverlay?.classList.remove('active');
 }
 

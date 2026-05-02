@@ -17,6 +17,8 @@ els.categoryLinks.forEach(link => {
     hideAllOverlays();
     const category = getCategoryFromLabel(link);
     if (!category) return;
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    document.querySelector('a#quest-paths')?.classList.add('active');
     loadQuestion(state, category, onAnswer);
     showCategoryOverlay(category);
   });

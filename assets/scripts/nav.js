@@ -8,9 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
     navLinks.forEach(link => {
         link.addEventListener("click", (e) => {
             if (link.id === "quest-paths") {
-                if (aboutLink) {
-                    aboutLink.classList.remove("active");
-                }
+                navLinks.forEach(nav => nav.classList.remove("active"));
+                link.classList.add("active");
                 return;
             }
             
