@@ -68,8 +68,5 @@ document.querySelector('.view-score')?.addEventListener('click', () => {
 // Exit
 document.querySelector('.end-options button:nth-child(2)')?.addEventListener('click', () => location.reload());
 
-// Transitional: keep inline onclicks working (optional)
-window.handleAnswer = (category, text, btn) => onAnswer(category, text, btn);
-
 // Initial
 hideAllOverlays();

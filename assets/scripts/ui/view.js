@@ -38,22 +38,22 @@ export function showResult(state, category) {
       cfg.result.querySelector('.inner-circle span').textContent = `${score}/${total}`;
       cfg.result.querySelector('.correct span').textContent = score;
       cfg.result.querySelector('.wrong span').textContent = wrong;
-      state.completed.science = true;
+      state.completed.Science = true;
       break;
     case 'Technology':
       cfg.result.querySelector('.correct .result').textContent = score;
       cfg.result.querySelector('.wrong .result').textContent = wrong;
-      state.completed.tech = true;
+      state.completed.Technology = true;
       break;
     case 'History':
       cfg.result.querySelector('.correct .result').textContent = score;
       cfg.result.querySelector('.wrong .result').textContent = wrong;
-      state.completed.history = true;
+      state.completed.History = true;
       break;
     case 'Mathematics':
       cfg.result.querySelector('.correct').textContent = score;
       cfg.result.querySelector('.wrong').textContent = wrong;
-      state.completed.math = true;
+      state.completed.Mathematics = true;
       break;
   }
 
@@ -74,7 +74,7 @@ export function updatePathBanners(state) {
     const label = li.querySelector('span');
     const a = li.querySelector('a');
     if (!label || !a) return;
-    const key = label.classList[0].replace('-label', '').toLowerCase();
+    const key = label.textContent;
     if (state.completed[key]) {
       label.classList.add('completed-category');
       a.classList.add('done');
@@ -98,7 +98,7 @@ export function updateTotalResults(state) {
 
 export function checkAllCompleted(state) {
   const c = state.completed;
-  return c.science && c.tech && c.history && c.math;
+  return c.Science && c.Technology && c.History && c.Mathematics;
 }
 
 export function showCategoryOverlay(category) {

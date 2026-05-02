@@ -303,7 +303,6 @@ a.done {
 }
 
 .end-options {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 0 30px;
     margin-top: 3rem;
@@ -1429,6 +1428,12 @@ a.done {
 
 .blur-overlay.active {
     opacity: 1;
+    pointer-events: none;
+}
+
+/* Block banner clicks when any quiz is active */
+.blur-overlay.active ~ section .paths {
+    pointer-events: none;
 }
 
 /* footer */
@@ -2723,10 +2728,6 @@ footer p {
     }
 
     .history-answers {
-        gap: 25px 50px;
-    }
-
-    .history-answers {
         gap: 20px 50px;
     }
 
@@ -3109,13 +3110,9 @@ footer p {
     }
 
     .math-answers button {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
         border-radius: 7px;
         padding: 8px 0;
-    }
-
-    .math-answers button {
-        font-size: 1.5rem;
     }
 
     .math-answers button.wrong::after {
@@ -3336,10 +3333,6 @@ footer p {
 
     .history-question p {
         font-size: 1.8rem;
-    }
-
-    .history-answers {
-        gap: 25px 70px;
     }
 
     .history-answers {
@@ -3716,13 +3709,9 @@ footer p {
     }
 
     .math-answers button {
-        font-size: 2rem;
+        font-size: 1.8rem;
         border-radius: 10px;
         padding: 12px 0;
-    }
-
-    .math-answers button {
-        font-size: 1.8rem;
     }
 
     .math-answers button.wrong::after {
@@ -3796,11 +3785,4 @@ footer p {
     }
 }
 
-.correctt {
-    background-color: #00f508 !important;
-}
-
-.wrongg {
-    background-color: #ff0019 !important;
-}
 

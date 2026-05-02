@@ -16,7 +16,7 @@ export function handleAnswer(state, category, selectedAnswer, clickedButton) {
   } else {
     clickedButton.classList.add('wrong', categoryClass);
     buttons.forEach(b => {
-      if (b.textContent === correct) b.classList.add('correct', categoryClass);
+      if (b.textContent.trim() === correct) b.classList.add('correct', categoryClass);
     });
   }
 

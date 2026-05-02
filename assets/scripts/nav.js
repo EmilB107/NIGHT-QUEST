@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const aboutLink = document.querySelector("a#about"); // Target the About link
 
     navLinks.forEach(link => link.classList.remove("active"));
-    document.querySelector("a[href='/']").classList.add("active");
+    document.querySelector("a#home")?.classList.add("active");
 
     navLinks.forEach(link => {
         link.addEventListener("click", (e) => {

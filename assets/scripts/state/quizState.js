@@ -13,10 +13,10 @@ export function createQuizState() {
       Mathematics: 0
     },
     completed: {
-      science: false,
-      tech: false,
-      history: false,
-      math: false
+      Science: false,
+      Technology: false,
+      History: false,
+      Mathematics: false
     }
   };
 }
@@ -24,5 +24,5 @@ export function createQuizState() {
 export function resetCategory(state, category) {
   state.currentQuestion[category] = 0;
   state.score[category] = 0;
-  state.completed[category.toLowerCase()] = false;
+  state.completed[category] = false;
 }
