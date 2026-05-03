@@ -588,7 +588,7 @@ a.done {
 }
 
 .science-result {
-    font-size: clamp(0.5rem, 1.5cqi, 2rem);
+    font-size: clamp(0.5rem, 2.5cqi, 2rem);
     text-align: center;
     display: flex;
     flex-direction: column;
