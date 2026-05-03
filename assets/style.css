@@ -402,6 +402,7 @@ a.done {
 /* Quest Paths Overlay */
 /* Science */
 .science-overlay {
+    container-type: inline-size;
     position: absolute;
     top: 20%;
     left: 50%;
@@ -426,14 +427,17 @@ a.done {
 .science-overlay img {
     width: 100%;
     border-radius: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 5cqi;
 }
 
 .science-content {
     position: absolute;
     width: 100%;
-    padding: 0 40px;
-    margin-bottom: 5px;
+    padding: 12cqi 13% 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
     z-index: 3;
     text-align: center;
 }
@@ -448,25 +452,26 @@ a.done {
     gap: 20px;
     width: 100%;
     padding: 0 10px;
+    margin-bottom: 2cqi;
 }
 
 .science-title h3 {
-    font-size: .6rem;
+    font-size: clamp(0.7rem, 2cqi, 2rem);
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
 .science-title img {
-    width: 15px;
+    width: clamp(18px, 3cqi, 50px);
     height: auto;
     overflow: visible;
     position: relative;
-    top: 10px;
+    top: 2.5cqi;
 }
 
 .science-title p {
-    font-size: 1rem;
+    font-size: clamp(1.1rem, 3cqi, 3.2rem);
 }
 
 .science-question {
@@ -474,22 +479,23 @@ a.done {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15px;
 }
 
 .science-question img {
-    width: 30%;
+    width: 35%;
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 3%;
 }
 
 .science-question p {
     font-family: 'comic-bold', cursive;
-    font-size: .5rem;
-    width: 80%;
+    font-size: clamp(0.5rem, 2cqi, 1.8rem);
+    width: 85%;
 }
 
 .science-answers {
+    margin-top: auto;
+    margin-bottom: 12.5cqi;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
@@ -499,11 +505,11 @@ a.done {
     background-color: #EBECF0;
     font-family: 'comic-bold', cursive;
     color: #B2B6C6;
-    font-size: 0.5rem;
+    font-size: clamp(0.5rem, 2cqi, 1.8rem);
     width: auto;
     height: auto;
-    padding: 2px 18px;
-    margin: 3px 18px;
+    padding: clamp(2px, 0.5cqi, 10px) clamp(10px, 2.5cqi, 25px);
+    margin: clamp(3px, 0.8cqi, 16px) clamp(10px, 2.5cqi, 25px);
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -1451,6 +1457,8 @@ footer p {
     text-align: center;
 }
 
+
+
 @media (min-width: 480px) /* 800 */ {
     .paths {
         margin-top: -2.18rem;
@@ -1458,42 +1466,6 @@ footer p {
 
     .science-overlay {
         top: 23%;
-    }
-
-    .science-content {
-        padding: 0 60px;
-        padding-top: 15px;
-    }
-
-    .science-title h3 {
-        font-size: .7rem;
-    }
-
-    .science-title img {
-        width: 18px;
-    }
-
-    .science-title p {
-        font-size: 1.1rem;
-    }
-
-    .science-question {
-        margin-bottom: 25px;
-    }
-
-    .science-question img {
-        width: 33%;
-    }
-
-    .science-question p {
-        font-size: .6rem;
-        width: 85%;
-    }
-
-    .science-answers button {
-        font-size: 0.6rem;
-        padding: 3px 18px;
-        margin: 5px 18px;
     }
 
     .science-result-content h3 {
@@ -1728,6 +1700,7 @@ footer p {
     }
 }
 
+
 @media (min-width: 580px) /* 800 */ {
     .paths {
         margin-top: -2.6rem;
@@ -1748,42 +1721,6 @@ footer p {
 
     .science-overlay {
         top: 28%;
-    }
-
-    .science-content {
-        padding: 0px 80px;
-        padding-top: 25px;
-    }
-
-    .science-title h3 {
-        font-size: .8rem;
-    }
-
-    .science-title img {
-        width: 20px;
-    }
-
-    .science-title p {
-        font-size: 1.2rem;
-    }
-
-    .science-question {
-        margin-bottom: 25px;
-    }
-
-    .science-question img {
-        width: 40%;
-    }
-
-    .science-question p {
-        font-size: .7rem;
-        width: 90%;
-    }
-
-    .science-answers button {
-        font-size: 0.7rem;
-        padding: 4px 18px;
-        margin: 6px 18px;
     }
 
     .science-result-overlay {
@@ -2042,24 +1979,6 @@ footer p {
         top: 30%;
     }
 
-    .science-content {
-        padding: 0px 90px;
-        padding-top: 28px;
-    }
-
-    .science-question {
-        margin-bottom: 35px;
-    }
-
-    .science-question p {
-        width: 90%;
-    }
-
-    .science-answers button {
-        padding: 4px 18px;
-        margin: 6px 18px;
-    }
-
     .science-result-overlay {
         top: 25%;
         left: 50%;
@@ -2283,15 +2202,7 @@ footer p {
         top: 50%;
         left: 50%;
         width: 70%;
-    }
-
-    .science-content {
-        padding: 0px 90px;
-        padding-top: 25px;
-    }
-
-    .science-question {
-        margin-bottom: 30px;
+        max-width: 70vw;
     }
 
     .science-result-overlay {
@@ -2497,6 +2408,7 @@ footer p {
     }
 }
 
+
 @media (min-width: 1200px) /* 675 */ {
     h1  {
         font-size: 5rem;
@@ -2556,41 +2468,6 @@ footer p {
         font-size: 1.5rem;
         padding: 20px 50px;
         padding-bottom: 0;
-    }
-
-    .science-content {
-        padding: 0px 120px;
-        padding-top: 45px;
-    }
-
-    .science-title h3 {
-        font-size: 1.2rem;
-    }
-
-    .science-title img {
-        width: 35px;
-    }
-
-    .science-title p {
-        font-size: 2rem;
-    }
-
-    .science-question {
-        margin-bottom: 45px;
-    }
-
-    .science-question img {
-        margin-bottom: 20px;
-    }
-
-    .science-question p {
-        font-size: 1rem;
-    }
-
-    .science-answers button {
-        font-size: 1rem;
-        padding: 5px 25px;
-        margin: 10px 25px;
     }
 
     .science-result-content h3 {
@@ -2916,45 +2793,6 @@ footer p {
         font-size: 1.7rem;
     }
 
-    .science-overlay {
-        width: 75%;
-    }
-
-    .science-content {
-        padding: 0px 160px;
-        padding-top: 70px;
-    }
-
-    .science-title h3 {
-        font-size: 1.5rem;
-    }
-
-    .science-title img {
-        width: 40px;
-    }
-
-    .science-title p {
-        font-size: 2.5rem;
-    }
-
-    .science-question {
-        margin-bottom: 70px;
-    }
-
-    .science-question img {
-        margin-bottom: 20px;
-    }
-
-    .science-question p {
-        font-size: 1.3rem;
-    }
-
-    .science-answers button {
-        font-size: 1.3rem;
-        padding: 8px 25px;
-        margin: 12px 25px;
-    }
-
     .science-result-content h3 {
         font-size: 3rem;
         margin-top: 80px;
@@ -3204,41 +3042,6 @@ footer p {
 
     .end-options button {
         font-size: 1.75rem;
-    }
-
-    .science-overlay {
-        width: 73%;
-    }
-
-    .science-content {
-        padding: 0px 180px;
-        padding-top: 80px;
-    }
-
-    .science-title h3 {
-        font-size: 1.7rem;
-    }
-
-    .science-title img {
-        width: 45px;
-    }
-
-    .science-title p {
-        font-size: 2.8rem;
-    }
-
-    .science-question {
-        margin-bottom: 80px;
-    }
-
-    .science-question p {
-        font-size: 1.5rem;
-    }
-
-    .science-answers button {
-        font-size: 1.5rem;
-        padding: 10px 25px;
-        margin: 12px 25px;
     }
 
     .science-result-content h3 {
@@ -3498,37 +3301,6 @@ footer p {
         font-size: 2rem;
         padding: 40px 80px;
         padding-bottom: 0;
-    }
-
-    .science-content {
-        padding: 0px 200px;
-        padding-top: 95px;
-    }
-
-    .science-title h3 {
-        font-size: 2rem;
-    }
-
-    .science-title p {
-        font-size: 3rem;
-    }
-
-    .science-question {
-        margin-bottom: 85px;
-    }
-
-    .science-question img {
-        margin-bottom: 20px;
-    }
-
-    .science-question p {
-        font-size: 1.8rem;
-    }
-
-    .science-answers button {
-        font-size: 1.8rem;
-        padding: 8px 25px;
-        margin: 16px 25px;
     }
 
     .science-result-content h3 {
