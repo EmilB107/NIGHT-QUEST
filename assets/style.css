@@ -676,7 +676,7 @@ a.done {
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 75%;
+    width: 90%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -725,7 +725,7 @@ a.done {
     left: 11%;
     transform: translate(-50%, -50%);
     font-family: 'audio-wide', sans-serif;
-    font-size: clamp(1rem, 3cqi, 4.5rem);
+    font-size: clamp(1.2rem, 3cqi, 4.5rem);
     color: #00415A;
 }
 
@@ -735,7 +735,7 @@ a.done {
     left: 65%;
     transform: translate(-50%, -50%);
     font-family: 'michroma', sans-serif;
-    font-size: clamp(0.4rem, 2cqi, 2.8rem);
+    font-size: clamp(0.5rem, 2cqi, 2.8rem);
     font-weight: 400;
     color: white;
     letter-spacing: clamp(0.4rem, 0.8cqi, 2rem);
@@ -824,10 +824,14 @@ a.done {
     container-type: inline-size;
     position: absolute;
     top: 20%;
-    left: 47%;
+    left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     opacity: 0;
     pointer-events: none;
     z-index: 3;
@@ -840,8 +844,8 @@ a.done {
     pointer-events: auto;
 }
 
-.tech-result-overlay img {
-    width: 100%;
+.tech-result-overlay > img {
+    width: 100cqi;
     margin-bottom: 5cqi;
 }
 
@@ -852,7 +856,7 @@ a.done {
     top: 0;
     bottom: 0;
     width: 100%;
-    padding: 10cqi 5%;
+    padding: 16cqi 5cqi 10cqi;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -861,8 +865,8 @@ a.done {
 
 .tech-result-content h3 {
     font-weight: 400;
-    font-size: clamp(0.5rem, 2cqi, 3rem);
-    margin-bottom: clamp(5px, 1.5cqi, 20px);
+    font-size: clamp(0.7rem, 3cqi, 4rem);
+    margin-bottom: clamp(5px, 2cqi, 25px);
 }
 
 .tech-result {
@@ -870,34 +874,34 @@ a.done {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 0 clamp(10px, 2cqi, 40px);
-    margin-top: clamp(5px, 1.5cqi, 25px);
+    margin-top: clamp(20px, 9cqi, 100px);
 }
 
 .tech-result .correct {
     background-image: url(/assets/img/tech_result_correct_bg.png);
     background-size: cover;
     background-position: center;
-    padding: clamp(2px, 0.5cqi, 8px) clamp(8px, 2cqi, 20px);
+    padding: clamp(6px, 1.5cqi, 20px) clamp(14px, 4cqi, 45px);
 }
 
 .tech-result .wrong {
     background-image: url(/assets/img/tech_result_wrong_bg.png);
     background-size: cover;
     background-position: center;
-    padding: clamp(2px, 0.5cqi, 8px) clamp(8px, 2cqi, 20px);
+    padding: clamp(6px, 1.5cqi, 20px) clamp(14px, 4cqi, 45px);
 }
 
 .tech-result .result {
-    font-size: clamp(0.5rem, 2.5cqi, 3rem);
+    font-size: clamp(0.7rem, 4cqi, 4.5rem);
 }
 
 .tech-result .result-text {
-    font-size: clamp(0.3rem, 1cqi, 1.5rem);
+    font-size: clamp(0.4rem, 1.5cqi, 2rem);
 }
 
 .progress-bar-cont {
-    width: clamp(40px, 60%, 300px);
-    height: clamp(4px, 1cqi, 14px);
+    width: clamp(40px, 40cqi, 420px);
+    height: clamp(6px, 1.5cqi, 20px);
     background-color: #666666;
     border-radius: 10px;
     position: relative;
@@ -925,7 +929,7 @@ a.done {
 }
 
 .progress-label p {
-    font-size: clamp(0.3rem, 1cqi, 1.2rem);
+    font-size: clamp(0.4rem, 1.5cqi, 1.8rem);
 }
 
 .arrow-up {
@@ -938,14 +942,14 @@ a.done {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 0 clamp(8px, 1.5cqi, 25px);
-    margin-top: clamp(8px, 1.5cqi, 20px);
+    margin-top: clamp(8px, 1.8cqi, 25px);
 }
 
 .tech-options button {
     font-family: 'audio-wide', sans-serif;
-    font-size: clamp(0.3rem, 1cqi, 1.5rem);
+    font-size: clamp(0.4rem, 1.5cqi, 2rem);
     color: white;
-    padding: clamp(2px, 0.5cqi, 8px) clamp(5px, 1.5cqi, 15px);
+    padding: clamp(4px, 1cqi, 12px) clamp(8px, 2cqi, 20px);
     cursor: pointer;
     background: transparent;
     border: .025rem solid #00BCD4;
