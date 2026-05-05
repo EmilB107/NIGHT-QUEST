@@ -40,11 +40,16 @@ export function showResult(state, category) {
       cfg.result.querySelector('.wrong span').textContent = wrong;
       state.completed.Science = true;
       break;
-    case 'Technology':
+    case 'Technology': {
       cfg.result.querySelector('.correct .result').textContent = score;
       cfg.result.querySelector('.wrong .result').textContent = wrong;
+      const pct = Math.round((score / total) * 100);
+      cfg.result.querySelector('.progress-bar').style.width = `${pct}%`;
+      cfg.result.querySelector('.progress-label p').textContent = `${pct}%`;
+      cfg.result.querySelector('.progress-label').style.left = `${pct}%`;
       state.completed.Technology = true;
       break;
+    }
     case 'History':
       cfg.result.querySelector('.correct .result').textContent = score;
       cfg.result.querySelector('.wrong .result').textContent = wrong;
