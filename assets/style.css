@@ -1089,17 +1089,21 @@ a.done {
 .history-result-content {
     font-family: 'ps2p', system-ui;
     position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-top: clamp(15px, 4cqi, 60px);
 }
 
 .history-result-content h3 {
     text-align: center;
-    font-size: clamp(0.5rem, 2cqi, 2rem);
+    font-size: clamp(0.7rem, 3cqi, 3rem);
     margin-top: clamp(15px, 3cqi, 40px);
-    margin-bottom: clamp(10px, 2cqi, 30px);
+    margin-bottom: clamp(10px, 2.5cqi, 35px);
 }
 
 .history-result {
@@ -1107,7 +1111,7 @@ a.done {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 0 clamp(15px, 5cqi, 80px);
+    gap: 0 clamp(15px, 6cqi, 90px);
 }
 
 .history-result .correct {
@@ -1119,32 +1123,44 @@ a.done {
 }
 
 .history-result .result {
-    font-size: clamp(1rem, 4cqi, 4rem);
+    font-size: clamp(1.4rem, 6cqi, 6rem);
 }
 
 .history-result img {
-    width: clamp(10px, 3cqi, 30px);
+    width: clamp(14px, 4cqi, 40px);
     margin-top: clamp(5px, 1.5cqi, 15px);
 }
 
 .history-result .result-text {
     font-family: 'roboto', sans-serif;
-    font-size: clamp(0.3rem, 1cqi, 1rem);
+    font-size: clamp(0.4rem, 1.4cqi, 1.4rem);
     padding-top: 3px;
 }
 
 .history-options {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin-top: clamp(8px, 2cqi, 25px);
+    gap: 0 clamp(8px, 4cqi, 50px);
+    margin-top: clamp(8px, 1.8cqi, 25px);
 }
 
 .history-options button {
     border: none;
     background: none;
-    width: clamp(40px, 12cqi, 120px);
+    width: clamp(55px, 16cqi, 160px);
     height: auto;
     cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.history-options button:hover {
+    transform: translateY(-4px);
+}
+
+.history-options button img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* Mathematics */
