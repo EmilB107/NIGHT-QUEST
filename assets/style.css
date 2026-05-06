@@ -1014,7 +1014,7 @@ a.done {
 }
 
 .history-answers {
-    margin-bottom: 2cqi;
+    margin-bottom: clamp(8px, calc(5cqi - 10px), 51px);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: clamp(4px, 2cqi, 70px) clamp(10px, 3cqi, 45px);
