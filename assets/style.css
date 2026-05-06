@@ -1165,6 +1165,7 @@ a.done {
 
 /* Mathematics */
 .math-overlay {
+    container-type: inline-size;
     position: absolute;
     top: 20%;
     left: 50%;
@@ -1186,8 +1187,8 @@ a.done {
     pointer-events: auto;
 }
 
-.math-overlay img {
-    width: 100%;
+.math-overlay > img {
+    width: 100cqi;
 }
 
 .math-content {
@@ -1199,37 +1200,37 @@ a.done {
     align-items: center;
     text-align: center;
     width: 80%;
-    margin-top: 40px;
+    padding-top: clamp(20px, 4cqi, 60px);
 }
 
 .math-question {
-    margin-bottom: 30px;
+    margin-bottom: clamp(20px, 5cqi, 100px);
 }
 
 .math-question p {
     font-family: 'phr', cursive;
-    font-size: 1rem;
+    font-size: clamp(0.6rem, 4cqi, 5rem);
 }
 
 .math-answers {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 5px 10px;
+    gap: clamp(5px, 1.5cqi, 30px) clamp(8px, 3cqi, 50px);
     width: 80%;
 }
 
 .math-answers button {
     font-family: 'phr', cursive;
-    font-size: 0.5rem;
+    font-size: clamp(0.5rem, 2.5cqi, 3rem);
     color: white;
     width: 100%;
     border: none;
-    border-radius: 2px;
-    padding: 3px 0;
+    border-radius: clamp(2px, 0.8cqi, 10px);
+    padding: clamp(3px, 1cqi, 15px) 0;
     cursor: pointer;
     background: rgba(255, 255, 255, 0.5);
     transition: transform 0.2s ease;
-    position:relative;
+    position: relative;
     overflow: hidden;
 }
 
@@ -1238,20 +1239,20 @@ a.done {
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
-.math-answers button.correct{
-    text-shadow: 
-    0 0 5px #00FF00, 
-    0 0 10px #00FF00, 
+.math-answers button.correct {
+    text-shadow:
+    0 0 5px #00FF00,
+    0 0 10px #00FF00,
     0 0 15px #00FF00;
 }
 
-.math-answers button.correct::after{
+.math-answers button.correct::after {
     content: "";
-    position:absolute;
+    position: absolute;
     top: 50%;
-    left: 8px;
-    width: 20px;
-    height: 20px;
+    left: 5%;
+    width: clamp(15px, 5cqi, 80px);
+    height: clamp(15px, 5cqi, 80px);
     transform: translateY(-50%);
     background-image: url('../assets/img/math_correct.png');
     background-size: contain;
@@ -1259,10 +1260,10 @@ a.done {
 }
 
 .math-answers button.wrong {
-    text-shadow: 
+    text-shadow:
     0 0 5px #f00,
-    0 0 10px #f00, 
-    0 0 20px #f00, 
+    0 0 10px #f00,
+    0 0 20px #f00,
     0 0 30px #f00;
 }
 
@@ -1270,9 +1271,9 @@ a.done {
     content: "";
     position: absolute;
     top: 50%;
-    left: 8px;
-    width: 20px;
-    height: 20px;
+    left: 5%;
+    width: clamp(15px, 5cqi, 80px);
+    height: clamp(15px, 5cqi, 80px);
     transform: translateY(-50%);
     background-color: transparent;
     background-image: url('../assets/img/math_wrong.png');
@@ -1282,6 +1283,7 @@ a.done {
 
 /* Mathematics Result */
 .math-result-overlay {
+    container-type: inline-size;
     position: absolute;
     top: 20%;
     left: 50%;
@@ -1303,8 +1305,8 @@ a.done {
     pointer-events: auto;
 }
 
-.math-result-overlay img {
-    width: 100%;
+.math-result-overlay > img {
+    width: 100cqi;
 }
 
 .math-result-content {
@@ -1312,61 +1314,59 @@ a.done {
     position: absolute;
     display: flex;
     flex-direction: column;
-    width: 80%;
-    margin-top: 20px;
+    padding-top: clamp(10px, 2cqi, 30px);
+    padding-left: clamp(15px, 8cqi, 130px);
 }
 
 .math-result-content h3 {
     font-family: 'phr-sc', cursive;
     font-weight: 400;
     text-align: left;
-    margin-bottom: 13px;
-    margin-left: 20px;
+    font-size: clamp(1rem, 6cqi, 7rem);
+    margin-bottom: clamp(8px, 1.5cqi, 25px);
 }
 
 .math-result {
     font-family: 'phr', cursive;
-    font-size: .8rem;
+    font-size: clamp(0.7rem, 3cqi, 3.5rem);
     text-align: center;
     width: 80%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px 0;
-    margin-left: 40px;
+    gap: clamp(5px, 1cqi, 15px) 0;
 }
 
 .math-result .correct {
-   text-shadow: 
-   0 0 5px #0f0, /* Subtle green glow */
-   0 0 10px #0f0, 
-   0 0 20px #0f0, 
-   0 0 30px #0f0;
+    text-shadow:
+    0 0 5px #0f0,
+    0 0 10px #0f0,
+    0 0 20px #0f0,
+    0 0 30px #0f0;
 }
 
 .math-result .wrong {
-    text-shadow: 
+    text-shadow:
     0 0 5px #f00,
-    0 0 10px #f00, 
-    0 0 20px #f00, 
+    0 0 10px #f00,
+    0 0 20px #f00,
     0 0 30px #f00;
 }
 
 .math-options {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin: 0 auto;
-    margin-top: 15px;
+    margin-top: clamp(10px, 3cqi, 60px);
     width: 70%;
-    gap: 0 30px;
+    gap: 0 clamp(20px, 7cqi, 120px);
 }
 
 .math-options button {
     background: transparent;
     color: white;
     border: 1px dashed white;
-    padding: 3px 0;
+    padding: clamp(3px, 0.8cqi, 12px) 0;
     font-family: 'gloria', cursive;
-    font-size: .5rem;
+    font-size: clamp(0.5rem, 2cqi, 2.5rem);
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -1534,38 +1534,6 @@ footer p {
     }
 
 
-    .math-question p {
-        font-size: 1.25rem;
-    }
-
-    .math-answers button {
-        font-size: .75rem;
-    }
-
-    .math-answers button.wrong::after {
-        width: 25px;
-        height: 25px;
-    }
-
-    .math-answers button.correct::after {
-        width: 25px;
-        height: 25px;
-    }
-
-    .math-result-content {
-        width: 80%;
-        margin-top: 30px;
-    }
-
-    .math-result-content h3 {
-        font-size: 1.5rem;
-    }
-
-    .math-result {
-        font-size: .85rem;
-        margin-left: 50px;
-    }
-
     .result-overlay {
         top: 23%;
     }
@@ -1657,47 +1625,8 @@ footer p {
         top: 25%;
     }
 
-    .math-question p {
-        font-size: 1.5rem;
-    }
-
-    .math-answers button {
-        font-size: .9rem;
-    }
-
-    .math-answers button.wrong::after {
-        width: 30px;
-        height: 30px;
-    }
-
-    .math-answers button.correct::after {
-        width: 30px;
-        height: 30px;
-    }
-
     .math-result-overlay {
         top: 25%;
-    }
-
-    .math-result-content h3 {
-        font-size: 1.8rem;
-        margin-bottom: 13px;
-        margin-left: 50px;
-    }
-
-    .math-result {
-        font-size: 1.1rem;
-        margin-left: 60px;
-    }
-
-    .math-options {
-        margin-top: 25px;
-        width: 60%;
-        gap: 0 40px;
-    }
-
-    .math-options button {
-        font-size: .6rem;
     }
 
     .result-overlay {
@@ -1774,33 +1703,8 @@ footer p {
         top: 28%;
     }
 
-    .math-content {
-        margin-top: 50px;
-    }
-
-    .math-question {
-        margin-bottom: 40px;
-    }
-
-    .math-question p {
-        font-size: 1.75rem;
-    }
-
-    .math-answers button {
-        font-size: 1rem;
-    }
-
     .math-result-overlay {
         top: 28%;
-    }
-
-    .math-result-content h3 {
-        font-size: 2rem;
-        margin-bottom: 15px;
-    }
-
-    .math-result {
-        font-size: 1.3rem;
     }
 
     .result-overlay {
@@ -1948,51 +1852,9 @@ footer p {
         width: 80%;
     }
 
-    .math-content {
-        margin-top: 50px;
-    }
-
-    .math-question {
-        margin-bottom: 40px;
-    }
-
-    .math-question p {
-        font-size: 1.8rem;
-    }
-
-    .math-answers {
-        gap: 10px 15px;
-    }
-
-    .math-answers button {
-        font-size: 1rem;
-        border-radius: 5px;
-        padding: 4px 0;
-    }
-
-    .math-answers button.wrong::after {
-        left: 5%;
-        width: 35px;
-        height: 35px;
-    }
-
-    .math-answers button.correct::after {
-        left: 3%;
-        width: 35px;
-        height: 35px;
-    }
-
     .math-result-overlay {
         top: 50%;
         width: 80%;
-    }
-
-    .math-result-content h3 {
-        font-size: 2.25rem;
-    }
-
-    .math-result {
-        font-size: 1.5rem;
     }
 
     .result-overlay {
@@ -2121,62 +1983,6 @@ footer p {
         top: 50%;
     }
 
-    .math-content {
-        margin-top: 55px;
-    }
-
-    .math-question {
-        margin-bottom: 60px;
-    }
-
-    .math-question p {
-        font-size: 2.5rem;
-    }
-
-    .math-answers {
-        gap: 15px 20px;
-    }
-
-    .math-answers button {
-        font-size: 1.5rem;
-        border-radius: 7px;
-        padding: 6px 0;
-    }
-
-    .math-answers button.wrong::after {
-        left: 7%;
-        width: 55px;
-        height: 55px;
-    }
-
-    .math-answers button.correct::after {
-        left: 5%;
-        width: 55px;
-        height: 55px;
-    }
-
-    .math-result-content h3 {
-        font-size: 4rem;
-        margin-left: 80px;
-        margin-bottom: 20px;
-    }
-
-    .math-result {
-        font-size: 2rem;
-        margin-left: 90px;
-    }
-
-    .math-options {
-        margin-top: 35px;
-        width: 60%;
-        gap: 0 70px;
-    }
-
-    .math-options button {
-        font-size: 1rem;
-        padding: 6px 0;
-    }
-
     .result-overlay {
         width: 70%;
     }
@@ -2289,53 +2095,6 @@ footer p {
     }
 
 
-    .math-content {
-        margin-top: 60px;
-    }
-
-    .math-question {
-        margin-bottom: 70px;
-    }
-
-    .math-question p {
-        font-size: 3rem;
-    }
-
-    .math-answers {
-        gap: 20px 25px;
-    }
-
-    .math-answers button {
-        font-size: 1.5rem;
-        border-radius: 7px;
-        padding: 8px 0;
-    }
-
-    .math-answers button.wrong::after {
-        width: 60px;
-        height: 60px;
-    }
-
-    .math-answers button.correct::after {
-        width: 60px;
-        height: 60px;
-    }
-
-    .math-result-content h3 {
-        font-size: 5rem;
-        margin-left: 100px;
-        margin-bottom: 20px;
-    }
-
-    .math-result {
-        font-size: 2.5rem;
-        margin-left: 110px;
-    }
-
-    .math-options button {
-        font-size: 1.2rem;
-    }
-
     .result-content {
         margin-top: 70px;
     }
@@ -2403,47 +2162,6 @@ footer p {
     }
 
 
-
-    .math-question p {
-        font-size: 3.5rem;
-    }
-
-    .math-answers button {
-        font-size: 1.8rem;
-        border-radius: 8px;
-        padding: 10px 0;
-    }
-
-    .math-answers button.wrong::after {
-        left: 10%;
-        width: 65px;
-        height: 65px;
-    }
-
-    .math-answers button.correct::after {
-        left: 8%;
-        width: 65px;
-        height: 65px;
-    }
-
-    .math-result-content h3 {
-        font-size: 5.5rem;
-        margin-left: 110px;
-    }
-
-    .math-result {
-        font-size: 2.8rem;
-    }
-
-    .math-options {
-        margin-top: 45px;
-        gap: 0 90px;
-    }
-
-    .math-options button {
-        font-size: 1.4rem;
-        padding: 8px 0;
-    }
 
     .result-content {
         margin-top: 70px;
@@ -2554,56 +2272,6 @@ footer p {
 
 
 
-
-    .math-question {
-        margin-bottom: 100px;
-    }
-
-    .math-question p {
-        font-size: 4.5rem;
-    }
-
-    .math-answers {
-        gap: 25px 45px;
-    }
-
-    .math-answers button {
-        font-size: 1.8rem;
-        border-radius: 10px;
-        padding: 12px 0;
-    }
-
-    .math-answers button.wrong::after {
-        left: 13%;
-        width: 80px;
-        height: 80px;
-    }
-
-    .math-answers button.correct::after {
-        left: 10%;
-        width: 80px;
-        height: 80px;
-    }
-
-    .math-result-content h3 {
-        font-size: 6rem;
-        margin-left: 120px;
-    }
-
-    .math-result {
-        font-size: 3rem;
-        margin-left: 120px;
-    }
-
-    .math-options {
-        margin-top: 55px;
-        gap: 0 110px;
-    }
-
-    .math-options button {
-        font-size: 1.6rem;
-        padding: 10px 0;
-    }
 
     .result-content {
         margin-top: 80px;
