@@ -49,7 +49,7 @@ document.querySelectorAll('.retake').forEach(btn => {
     const allBtns = cfg.quiz.querySelectorAll('button');
     allBtns.forEach(b => {
       b.disabled = false;
-      b.classList.remove('correct', 'wrong', `${category.toLowerCase()}-answers`);
+      b.classList.remove('correct', 'wrong', `${category.toLowerCase()}-answer-feedback`);
     });
     loadQuestion(state, category, onAnswer);
     cfg.quiz.classList.add('active');

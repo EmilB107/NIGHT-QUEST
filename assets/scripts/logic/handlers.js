@@ -9,7 +9,7 @@ export function handleAnswer(state, category, selectedAnswer, clickedButton) {
   const buttons = clickedButton.parentElement.querySelectorAll('button');
   buttons.forEach(b => b.disabled = true);
 
-  const categoryClass = `${category.toLowerCase()}-answers`;
+  const categoryClass = `${category.toLowerCase()}-answer-feedback`;
   if (selectedAnswer === correct) {
     state.score[category]++;
     clickedButton.classList.add('correct', categoryClass);

@@ -964,6 +964,7 @@ a.done {
 
 /* History */
 .history-overlay {
+    container-type: inline-size;
     position: absolute;
     top: 20%;
     left: 50%;
@@ -985,50 +986,53 @@ a.done {
     pointer-events: auto;
 }
 
-.history-overlay img {
-    width: 100%;
+.history-overlay > img {
+    width: 100cqi;
 }
 
 .history-content {
     position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 10%;
+    right: 10%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 80%;
     text-align: center;
-    margin-top: 40px;
+    padding: 23cqi 0 3cqi;
 }
 
 .history-question {
-    margin-bottom: 40px;
+    margin-bottom: 0;
 }
 
 .history-question p {
     font-family: 'roboto', sans-serif;
-    font-size: .5rem;
+    font-size: clamp(0.5rem, 2cqi, 1.8rem);
 }
 
 .history-answers {
+    margin-bottom: 2cqi;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 5px 25px;
-    width: 80%;
+    gap: clamp(4px, 2cqi, 70px) clamp(10px, 3cqi, 45px);
+    width: 100%;
 }
 
 .history-answers button {
     background: url('../assets/img/history_button.png') no-repeat center center;
     background-size: 100% 100%;
-    position: relative;
     font-family: 'ps2p', system-ui;
-    font-size: 0.285rem;
+    font-size: clamp(0.285rem, 1cqi, 1.6rem);
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    height: 20px;
+    height: clamp(18px, 4cqi, 80px);
     width: auto;
     color: white;
-    padding: 2px 5px;
+    padding: clamp(2px, 0.5cqi, 6px) clamp(4px, 1cqi, 12px);
     text-align: center;
     box-sizing: border-box;
     display: flex;
@@ -1056,6 +1060,7 @@ a.done {
 
 /* History Result */
 .history-result-overlay {
+    container-type: inline-size;
     position: absolute;
     top: 20%;
     left: 50%;
@@ -1077,8 +1082,8 @@ a.done {
     pointer-events: auto;
 }
 
-.history-result-overlay img {
-    width: 100%;
+.history-result-overlay > img {
+    width: 100cqi;
 }
 
 .history-result-content {
@@ -1086,13 +1091,15 @@ a.done {
     position: absolute;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-top: clamp(15px, 4cqi, 60px);
 }
 
 .history-result-content h3 {
     text-align: center;
-    font-size: 1rem;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    font-size: clamp(0.5rem, 2cqi, 2rem);
+    margin-top: clamp(15px, 3cqi, 40px);
+    margin-bottom: clamp(10px, 2cqi, 30px);
 }
 
 .history-result {
@@ -1100,7 +1107,7 @@ a.done {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 0 50px;
+    gap: 0 clamp(15px, 5cqi, 80px);
 }
 
 .history-result .correct {
@@ -1112,30 +1119,30 @@ a.done {
 }
 
 .history-result .result {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 4cqi, 4rem);
 }
 
 .history-result img {
-    width: 15px;
-    margin-top: 10px;
+    width: clamp(10px, 3cqi, 30px);
+    margin-top: clamp(5px, 1.5cqi, 15px);
 }
 
 .history-result .result-text {
     font-family: 'roboto', sans-serif;
-    font-size: .5rem;
+    font-size: clamp(0.3rem, 1cqi, 1rem);
     padding-top: 3px;
 }
 
 .history-options {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin-top: 15px;
+    margin-top: clamp(8px, 2cqi, 25px);
 }
 
 .history-options button {
     border: none;
     background: none;
-    width: 80px;
+    width: clamp(40px, 12cqi, 120px);
     height: auto;
     cursor: pointer;
 }
@@ -1510,53 +1517,6 @@ footer p {
         top: 23%;
     }
 
-    .history-content {
-        margin-top: 45px;
-    }
-
-    .history-question {
-        margin-bottom: 45px;
-    }
-
-    .history-question p {
-        font-size: .75rem;
-    }
-
-    .history-answers {
-        gap: 8px 25px;
-    }
-
-    .history-answers button {
-        font-size: 0.35rem;
-        height: 25px;
-    }
-
-    .history-result-content {
-        margin-top: 20px;
-    }
-
-    .history-result-content h3 {
-        font-size: 1.2rem;
-        margin-bottom: 30px;
-    }
-
-    .history-result {
-        gap: 0 60px;
-    }
-
-    .history-result .result {
-        font-size: 1.8rem;
-    }
-
-    .history-result img {
-        width: 18px;
-        margin-top: 15px;
-    }
-
-    .history-result .result-text {
-        font-size: .75rem;
-        padding-top: 3px;
-    }
 
     .math-question p {
         font-size: 1.25rem;
@@ -1676,51 +1636,6 @@ footer p {
         top: 23%;
     }
 
-    .history-content {
-        margin-top: 55px;
-    }
-
-    .history-question {
-        margin-bottom: 60px;
-    }
-
-    .history-question p {
-        font-size: .9rem;
-    }
-
-    .history-answers {
-        gap: 10px 25px;
-    }
-
-    .history-answers button {
-        font-size: 0.4rem;
-    }
-
-    .history-result-content h3 {
-        font-size: 1.5rem;
-        margin-bottom: 40px;
-    }
-
-    .history-result {
-        gap: 0 65px;
-    }
-
-    .history-result .result {
-        font-size: 2.3rem;
-    }
-
-    .history-result img {
-        width: 20px;
-        margin-top: 20px;
-    }
-
-    .history-result .result-text {
-        font-size: .8rem;
-    }
-
-    .history-options button {
-        width: 100px;
-    }
 
     .math-overlay {
         top: 25%;
@@ -1835,42 +1750,8 @@ footer p {
         top: 25%;
     }
 
-    .history-question p {
-        font-size: 1rem;
-    }
-
-    .history-answers button {
-        font-size: 0.5rem;
-        height: 30px;
-    }
-
     .history-result-overlay {
         top: 25%;
-    }
-
-    .history-result-content {
-        margin-top: 25px;
-    }
-
-    .history-result-content h3 {
-        font-size: 1.6rem;
-    }
-
-    .history-result {
-        gap: 0 65px;
-    }
-
-    .history-result .result {
-        font-size: 2.5rem;
-    }
-
-    .history-result img {
-        width: 20px;
-        margin-top: 20px;
-    }
-
-    .history-result .result-text {
-        font-size: .85rem;
     }
 
     .math-overlay {
@@ -2041,39 +1922,9 @@ footer p {
         width: 80%;
     }
 
-    .history-content {
-        margin-top: 60px;
-    }
-
-    .history-question {
-        margin-bottom: 70px;
-    }
-
-    .history-question p {
-        font-size: 1rem;
-        line-height: 1.5;
-    }
-
-    .history-answers {
-        gap: 15px 35px;
-    }
-
-    .history-answers button {
-        height: 35px;
-    }
-
     .history-result-overlay {
         top: 50%;
         width: 80%;
-    }
-
-    .history-options {
-        gap: 0 30px;
-        margin-top: 20px;
-    }
-
-    .history-options button {
-        width: 110px;
     }
 
     .math-overlay {
@@ -2254,58 +2105,6 @@ footer p {
         top: 50%;
     }
 
-    .history-content {
-        margin-top: 100px;
-    }
-
-    .history-question {
-        margin-bottom: 110px;
-    }
-
-    .history-question p {
-        font-size: 1.5rem;
-    }
-
-    .history-answers {
-        gap: 20px 50px;
-    }
-
-    .history-answers button {
-        font-size: 0.6rem;
-        height: 50px;
-    }
-
-    .history-result-content h3 {
-        font-size: 2.25rem;
-        margin-bottom: 60px;
-    }
-
-    .history-result {
-        gap: 0 120px;
-    }
-
-    .history-result .result {
-        font-size: 4rem;
-    }
-
-    .history-result img {
-        width: 30px;
-        margin-top: 30px;
-    }
-
-    .history-result .result-text {
-        font-size: 1.25rem;
-    }
-
-    .history-options {
-        gap: 0 60px;
-        margin-top: 25px;
-    }
-
-    .history-options button {
-        width: 200px;
-    }
-
     .math-content {
         margin-top: 55px;
     }
@@ -2473,57 +2272,6 @@ footer p {
         font-size: 1.8rem;
     }
 
-    .history-answers button {
-        font-size: 1rem;
-        height: 60px;
-    }
-
-    .history-content {
-        margin-top: 110px;
-    }
-
-    .history-question {
-        margin-bottom: 130px;
-    }
-
-    .history-question p {
-        font-size: 1.65rem;
-    }
-
-    .history-answers button {
-        font-size: 0.75rem;
-    }
-
-    .history-result-content h3 {
-        font-size: 2.5rem;
-        margin-bottom: 70px;
-    }
-
-    .history-result {
-        gap: 0 130px;
-    }
-
-    .history-result .result {
-        font-size: 4.5rem;
-    }
-
-    .history-result img {
-        width: 35px;
-        margin-top: 35px;
-    }
-
-    .history-result .result-text {
-        font-size: 1.4rem;
-    }
-
-    .history-options {
-        gap: 0 70px;
-        margin-top: 35px;
-    }
-
-    .history-options button {
-        width: 210px;
-    }
 
     .math-content {
         margin-top: 60px;
@@ -2639,52 +2387,6 @@ footer p {
     }
 
 
-    .history-content {
-        margin-top: 130px;
-    }
-
-    .history-question {
-        margin-bottom: 150px;
-    }
-
-    .history-question p {
-        font-size: 1.8rem;
-    }
-
-    .history-answers {
-        gap: 25px 60px;
-    }
-
-    .history-answers button {
-        font-size: 1rem;
-        height: 65px;
-    }
-
-    .history-result-content h3 {
-        font-size: 2.8rem;
-        margin-bottom: 80px;
-    }
-
-    .history-result {
-        gap: 0 140px;
-    }
-
-    .history-result .result {
-        font-size: 6rem;
-    }
-
-    .history-result img {
-        width: 40px;
-        margin-top: 50px;
-    }
-
-    .history-result .result-text {
-        font-size: 1.5rem;
-    }
-
-    .history-options button {
-        width: 230px;
-    }
 
     .math-question p {
         font-size: 3.5rem;
@@ -2835,57 +2537,6 @@ footer p {
     }
 
 
-    .history-content {
-        margin-top: 150px;
-    }
-
-    .history-question {
-        margin-bottom: 180px;
-    }
-
-    .history-question p {
-        font-size: 2.25rem;
-    }
-
-    .history-answers {
-        gap: 30px 80px;
-    }
-
-    .history-answers button {
-        font-size: 1.1rem;
-        height: 75px;
-    }
-
-    .history-result-content h3 {
-        font-size: 3.25rem;
-        margin-bottom: 85px;
-    }
-
-    .history-result {
-        gap: 0 160px;
-    }
-
-    .history-result .result {
-        font-size: 8rem;
-    }
-
-    .history-result img {
-        width: 50px;
-        margin-top: 60px;
-    }
-
-    .history-result .result-text {
-        font-size: 1.8rem;
-    }
-
-    .history-options {
-        gap: 0 80px;
-        margin-top: 50px;
-    }
-
-    .history-options button {
-        width: 280px;
-    }
 
 
     .math-question {
